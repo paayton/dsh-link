@@ -1,0 +1,11 @@
+# 从 app.asar 提取的官方包源码，仅本地参考，不入库
+dsh-investigation/
+
+# 依赖与构建产物
+node_modules/
+dist/
+*.tsbuildinfo
+
+# 系统 / 编辑器
+.DS_Store
+*.log
