@@ -63,16 +63,15 @@ DeepSeek Harness 移动端 H5 桥接插件：在桌面版设置页新增「Link�
 
 ## 安装
 
-已通过以下方式装入本机 desktop profile：
-
 ```bash
+git clone https://github.com/paayton/dsh-link.git
 # 1) 链接插件到 profile（pnpm link）
-dsh plugin --profile desktop add /path/to/dsh-link
+dsh plugin --profile desktop add ./dsh-link
 # 2) 把 dsh-link 加进 ~/.dsh/profiles/desktop/package.json 的 dsh.profile.bundles 数组
 # 3) 桌面版热重载 profile（编辑 package.json 即触发）后生效
 ```
 
-卸载：从 `dsh.profile.bundles` 移除 `"dsh-link"`（备份见 `package.json.dsh-link-bak`），并 `dsh plugin --profile desktop remove dsh-link`。
+卸载：从 `dsh.profile.bundles` 移除 `"dsh-link"`，并 `dsh plugin --profile desktop remove dsh-link`。
 
 ## 配置（`cordis.patch.yml` 的 `config`）
 
