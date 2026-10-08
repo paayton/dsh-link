@@ -1,5 +1,9 @@
 # dsh-link
 
+[![CI](https://github.com/paayton/dsh-link/actions/workflows/ci.yml/badge.svg)](https://github.com/paayton/dsh-link/actions/workflows/ci.yml)
+[![dsh-plugin](https://img.shields.io/badge/DSH-plugin-4B6BFB)](https://github.com/topics/dsh-plugin)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
 DeepSeek Harness 移动端 H5 桥接插件：在桌面版设置页新增「Link」栏，让手机浏览器打开一个极简 H5，与 Mac 桌面版正在运行的会话交互（工作区边栏 + 基础聊天 + 流式回复）。
 
 ## 状态：可用，H5 已按「桌面版体验」重做 ✅
