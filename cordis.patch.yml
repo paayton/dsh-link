@@ -1,0 +1,17 @@
+# dsh-link 的 bundle patch：把 host 插件插入 loader 树。
+# host 段加载后，@deepseek-ai/dsh-client-modules 的 dsh.client 扫描会自动收录
+# 客户端段（./client 导出）并注入设置页「Link」栏。
+#
+# 可选配置（在此处的 config 下覆盖）：
+#   lanEnabled: true          # 是否开启独立监听
+#   lanPort: 19388            # 监听端口
+#   bindHost: "127.0.0.1"     # 绑定地址。默认仅回环（安全）；
+#                             # 要让手机经内网/Tailscale 接入，改为 "0.0.0.0"
+#                             # —— 这会把受密钥保护的只读/聊天口暴露到网络，请确认网络可信。
+- insert:
+    - id: dsh-link
+      name: dsh-link
+      config:
+        lanEnabled: true
+        lanPort: 19388
+        bindHost: "0.0.0.0"

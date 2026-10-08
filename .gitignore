@@ -3,6 +3,7 @@ dsh-investigation/
 
 # 依赖与构建产物
 node_modules/
+coverage/
 dist/
 *.tsbuildinfo
 

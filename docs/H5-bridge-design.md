@@ -228,7 +228,7 @@ export default class LinkBridge extends Service {
       const j = JSON.parse(stdout);
       return {
         running: j.BackendState === "Running",
-        dnsName: j.Self?.DNSName ?? null,          // e.g. "xuebinmacbook-pro.tailbcbec3.ts.net"
+        dnsName: j.Self?.DNSName ?? null,          // e.g. "my-mac.tailxxxx.ts.net"
         ips: j.Self?.TailscaleIPs ?? [],
         online: j.Self?.Online ?? false,
         health: Array.isArray(j.Health) ? j.Health : [],
@@ -443,7 +443,7 @@ export { apply, inject };
 ```
 · 连接方式卡片
     [内网 IP]  192.168.x.x:19387  （无则提示「未连接局域网」）
-    [Tailscale] ● 已运行  xuebinmacbook-pro.tailbcbec3.ts.net:19387
+    [Tailscale] ● 已运行  my-mac.tailxxxx.ts.net:19387
                 ● 未安装/未登录 → 显示安装引导
 · 连接密钥
     [生成密钥] → 显示一次 key + 复制按钮（也可做二维码）
@@ -471,8 +471,8 @@ export { apply, inject };
 
 **方式 A · Tailscale（推荐，安全）**
 1. 手机装 Tailscale App，用与 Mac 相同的账号登录（进入同一 tailnet）。
-2. 桌面端 设置 → Link 确认 Tailscale 状态「运行中」，记下 MagicDNS 名（如 `xuebinmacbook-pro.tailbcbec3.ts.net`，插件从 `tailscale status --json` 的 `Self.DNSName` 自动读取，无需手配）。
-3. 手机浏览器打开 `http://xuebinmacbook-pro.tailbcbec3.ts.net:19387/m/`。
+2. 桌面端 设置 → Link 确认 Tailscale 状态「运行中」，记下 MagicDNS 名（如 `my-mac.tailxxxx.ts.net`，插件从 `tailscale status --json` 的 `Self.DNSName` 自动读取，无需手配）。
+3. 手机浏览器打开 `http://my-mac.tailxxxx.ts.net:19387/m/`。
 4. 若 Link 已启用密钥：输入密钥 → 自动保存 → 进入会话边栏。
    > Tailscale 走 WireGuard：端到端加密 + 仅 tailnet 内可达 + MagicDNS 域名解析，这是「安全」的来源；密钥在此之上再加一道应用层门。
 

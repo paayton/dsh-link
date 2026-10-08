@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="DSH Link">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#16233a"/>
+      <stop offset="1" stop-color="#0b0f16"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <!-- 两个扣在一起的链环 = 「Link」 -->
+  <g fill="none" stroke-linecap="round" stroke-width="34">
+    <rect x="96" y="176" width="200" height="116" rx="58" transform="rotate(-38 196 234)" stroke="#4f8cff"/>
+    <rect x="216" y="220" width="200" height="116" rx="58" transform="rotate(-38 316 278)" stroke="#e6ebf2"/>
+  </g>
+  <circle cx="366" cy="150" r="26" fill="#4f8cff"/>
+</svg>

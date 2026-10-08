@@ -1,0 +1,5 @@
+# pnpm 12 把「允许执行构建脚本的依赖」放在这里（pnpm 10/11 读 package.json 的
+# pnpm.onlyBuiltDependencies）。两处都留着，兼容不同 pnpm 版本。
+# 需要它的原因：vitest 依赖的 esbuild 要靠 postinstall 拉平台二进制。
+allowBuilds:
+  esbuild: true

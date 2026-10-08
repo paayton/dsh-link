@@ -1,0 +1,83 @@
+{
+  "name": "dsh-link",
+  "version": "0.1.0",
+  "private": true,
+  "description": "DeepSeek Harness 移动端 H5 桥接：设置页新增「Link」栏，手机经内网/Tailscale 与桌面版会话聊天。",
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "mobile",
+    "h5",
+    "bridge"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/host/index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/host/index.d.ts",
+      "default": "./dist/host/index.js"
+    },
+    "./client": "./src/client/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "src",
+    "cordis.patch.yml",
+    "LICENSE",
+    "README.md",
+    "docs"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-client-ui-slots",
+        "@deepseek-ai/dsh-client-locale"
+      ]
+    }
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "test": "tsc && vitest run",
+    "prepare": "tsc",
+    "prepublishOnly": "tsc --noEmit && vitest run",
+    "test:watch": "vitest",
+    "coverage": "tsc && vitest run --coverage"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "4.0.4",
+    "@deepseek-ai/dsh-api-session-controller": "0.2.0-rc.2",
+    "@deepseek-ai/dsh-credentials": "0.2.0-rc.2",
+    "@deepseek-ai/dsh-session": "0.2.0-rc.2",
+    "@types/node": "^22.20.4",
+    "@vitest/coverage-v8": "^3.2.7",
+    "jsdom": "^26.1.0",
+    "typescript": "~5.9.3",
+    "vitest": "^3.2.7"
+  },
+  "types": "./dist/host/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paayton/dsh-link.git"
+  },
+  "bugs": {
+    "url": "https://github.com/paayton/dsh-link/issues"
+  },
+  "homepage": "https://github.com/paayton/dsh-link#readme",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  }
+}
